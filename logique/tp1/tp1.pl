@@ -56,7 +56,17 @@ pancarte1_3(X,Y,Z) :- unique(X,Y,Z), Z=vide.
 pancarte2_3(X,Y,Z) :- unique(X,Y,Z), X=tigre.
 pancarte3_3(X,Y,Z) :- unique(X,Y,Z), Z=vide.
 
-porte1(X) :- pancarte1_3(X,Y,Z), .
+porte1(X) :- unique(X,Y,Z), pancarte1_3(X,Y,Z), X=princesse.
+porte1(X) :- unique(X,Y,Z), pancarte1_3(X,Y,Z), X=vide.
+
+porte1(X) :- unique(X,Y,Z), pancarte1_3(X,Y,Z), X=tigre.
+porte1(X) :- unique(X,Y,Z), pancarte1_3(X,Y,Z), X=vide.
+
+porte1(X) :- not(pancarte2_3(X,Y,Z)), X=vide.
+
+porte2(Y) :- pancarte1_3(X,Y,Z), X=princesse.
+porte2(Y) :- pancarte1_3(X,Y,Z), X=princesse.
+
 porte2 :- .
 porte3 :- .
 
