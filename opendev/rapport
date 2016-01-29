@@ -1,0 +1,32 @@
+
+Semaine 1---
+
+-Exercice du compteur en Pharo.
+
+Semaine 2---
+
+-Choix du projet: ecstatic.
+-Installation de ecstatic.
+-Découverte du programme.
+-Proposition d'une amélioration :
+
+	-Pouvoir passer sur la commandline le proxy
+
+Ci dessous, l'erreur lors de l'installation de ecstatic :
+
+==== Startup Error: Error: Could not access http://smalltalkhub.com/mc/StephaneDucasse/Ecstatic/
+
+-Nous avons donc fait un commit pour permettre de configurer le proxy lors de l'installation.
+
+
+Semaine 3---
+
+-Envoi de mail à Guillermo pour en apprendre plus sur pillar et sur ecstatic.
+-Exercice du contact book
+
+
+
+
+
+
+
