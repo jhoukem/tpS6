@@ -69,26 +69,17 @@ tri_rapide([P|L],T) :- balance(P,L,L1,L2), tri_rapide(L1,T1), tri_rapide(L2,T2),
 est_vide([]).
 
 %Q17
-ajoute_ensemble(X,E1,E2) :- membre(X,E1), !, E2=E1.
-ajoute_ensemble(X,E1,E2) :- ajoute_en_queue(X,E1,E2).
-
-%Q18
-sous_ensemble([], _).
-sous_ensemble([T|Q],L) :- membre(T, L), sous_ensemble(Q, L).
-
-
-%Q19
 union([H|T],[],[H|T]).     
 union([],[H|T],[H|T]).    
 union([H|T], SET2, RESULT) :- membre(H,SET2), union(T,SET2,RESULT).    
 union([H|T], SET2, [H|RESULT]) :- not(membre(H,SET2)), union(T,SET2,RESULT).
 
-%Q20
+%Q18
 intersect([], _, []).
 intersect([H1|T1], L2, [H1|Res]) :- membre(H1, L2), intersect(T1, L2, Res).
 intersect([_|T1], L2, Res) :- intersect(T1, L2, Res).
 
-%Q21
+%Q19
 diff([], _, []) :- !.
 diff([A|C], B, D) :- membre(A, B), !, diff(C, B, D).
 diff([A|B], C, [A|D]) :- diff(B, C, D).
