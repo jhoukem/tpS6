@@ -38,9 +38,11 @@ verifie([]).
 verifie([H|T]):- verifier(H), verifie(T).
 
 %6
-eclate([],[],[]).
+eclate([],L,L).
 eclate([H|T],[H2|T2],[[H|H2]|L]):- eclate(T,T2,L).
 
 %7
-transp([],L)
+transp([[]],[]).
+transp([[X|Q]],[[X]|R]):- transp([Q],R).
+transp([L1|Q],L):- eclate(L1, TQ, L), transp(Q,TQ).
 
