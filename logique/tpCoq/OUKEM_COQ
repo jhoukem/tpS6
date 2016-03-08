@@ -1,0 +1,90 @@
+1
+Proof.
+
+Lemma hilbertS (A B C : Prop) :
+(A -> B -> C ) -> (A -> B) -> A -> C
+.
+intros abc.
+intros ab.
+intros a.
+apply abc.
+ -exact a.
+ -apply ab.
+  exact a.
+Qed.
+
+
+2.1
+
+1)
+:Proof.
+
+Lemma exo1 (P Q : Prop):
+ P -> (Q -> P).
+intros p.
+intros q.
+exact p.
+Qed.
+
+2)
+Proof.
+
+Lemma exo2 (P Q : Prop): 
+P -> ( ~ P -> Q).
+intros p.
+intro p'.
+destruct p'.
+apply p.
+Qed.
+
+3)
+Proof.
+
+Lemma exo3 (P Q R : Prop) :
+ (P -> Q) -> ((Q -> R) -> (P -> R)).
+intros pq.
+intros qr.
+intros p.
+apply qr.
+apply pq.
+exact p.
+Qed.
+
+4)
+Proof.
+
+Lemma exo4 (P Q : Prop) :
+(P -> Q) -> ( ~ Q -> ~ P).
+intros pq.
+intros nq.
+intros p.
+apply nq.
+apply pq.
+exact p.
+
+Qed.
+
+5)
+
+
+Proof.
+Require Import Classical.
+
+Lemma exo5 (P Q : Prop) :
+( ~ Q -> ~ P) -> (P -> Q).
+intros nqnp.
+intros p.
+destruct nqnp.
+-intros q.
+
+apply bottom_c.
+-exact p.
+
+
+Qed.
+
+
+
+
+
+
